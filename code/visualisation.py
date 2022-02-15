@@ -91,7 +91,6 @@ FROM titles
     JOIN crew ON titles.title_id = crew.title_id
     JOIN people ON crew.person_id = people.person_id
 WHERE genre_name = "Romance" AND category = "1"
-LIMIT 50
 """
 
 female_actors = """
@@ -102,7 +101,6 @@ FROM titles
     JOIN crew ON titles.title_id = crew.title_id
     JOIN people ON crew.person_id = people.person_id
 WHERE genre_name = "Romance" AND category = "2"
-LIMIT 50
 """
 
 
