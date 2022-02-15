@@ -83,3 +83,26 @@ plt.show()
 # делаем график по данным year_ratings
 
 
+male_actors = """
+SELECT name, premiered, born, (premiered - born) as age, AVG(premiered - born) as aveg_age_male
+FROM titles
+    JOIN film_genres ON titles.title_id = film_genres.title_id
+    JOIN genre_types ON film_genres.genre_id = genre_types.id
+    JOIN crew ON titles.title_id = crew.title_id
+    JOIN people ON crew.person_id = people.person_id
+WHERE genre_name = "Romance" AND category = "1"
+LIMIT 50
+"""
+
+female_actors = """
+SELECT name, premiered, born, (premiered - born) as age, AVG(premiered - born) as aveg_age_female
+FROM titles
+    JOIN film_genres ON titles.title_id = film_genres.title_id
+    JOIN genre_types ON film_genres.genre_id = genre_types.id
+    JOIN crew ON titles.title_id = crew.title_id
+    JOIN people ON crew.person_id = people.person_id
+WHERE genre_name = "Romance" AND category = "2"
+LIMIT 50
+"""
+
+
